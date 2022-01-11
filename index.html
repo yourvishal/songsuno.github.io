@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feel Kro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        .container {
+            background-image: url(image.png);
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .navbar {
+            width: 80%;
+            margin: auto;
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 140px;
+            cursor: pointer;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 0px 15px;
+        }
+
+        .navbar ul li a {
+            font-size: 15px;
+            text-decoration: none;
+            color: #5f5f5f;
+            transition: 0.25s;
+        }
+
+        .navbar ul li a:hover {
+            color: #fff;
+            letter-spacing: 2px;
+            
+        }
+
+        .content {
+            width: 100%;
+            position: absolute;
+            top: 30%;
+        }
+
+        .left-col {
+            margin-left: 6%;
+        }
+
+        .left-col h1 {
+            font-size: 90px;
+            color: white;
+            line-height: 110px;
+            float: left;
+        }
+
+        .right-col {
+            float: right;
+            margin-right: 6%;
+            margin-top: 120px;
+            align-items: center;
+            display: flex;
+        }
+
+        .right-col p {
+            font-size: 18px;
+            color: #5f5f5f;
+            font-weight: 400;
+            margin-right: 15px;
+        }
+
+        #icon {
+            width: 80px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="logo.png">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Specification</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Feedback</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="left-col">
+                <h1>THE<br> REAL<br>SOUND</h1>
+            </div>
+            <div class="right-col">
+                <p>Click here to listen</p>
+                <img src="play.png" id="icon">
+            </div>
+
+        </div>
+    </div>
+    <audio id="mysong">
+        <source src="Shiv Tandav Stotram - Lord Shiva Stotra - Shankar Mahadevan - Devotional.mp3" type="audio/mp3">
+    </audio>
+    <script>
+        var mysong = document.getElementById("mysong");
+        var icon = document.getElementById("icon");
+        icon.onclick = function () {
+            if (mysong.paused) {
+                mysong.play();
+                icon.src = "pause.png";
+            }
+            else {
+                mysong.pause();
+                icon.src = "play.png";
+            }
+        }
+    </script>
+</body>
+
+</html>
